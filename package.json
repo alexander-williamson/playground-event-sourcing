@@ -1,0 +1,23 @@
+{
+  "name": "playground-event-sourcing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/uuid": "^9.0.8",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2"
+  },
+  "dependencies": {
+    "serverless-mysql": "^1.5.5",
+    "ts-node": "^10.9.2",
+    "uuid": "^9.0.1"
+  }
+}
