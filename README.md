@@ -1,10 +1,8 @@
 # Playground - Event Sourcing
 
-An example of a bare bones implementation of using a MySQL repository to deal with Event Sourcing aggregates
+An example of a bare bones implementation of using a MySQL repository to deal with Event Sourcing aggregates.
 
-In fairness this could be simplified futher with an apply event and a case statement, so this is a blend of a few approaches:
-
-- The future where the apply function handlers don't have to be registered, and the name of the function is found using reflection
+I struggled with rehdrating an object bybusing reflection to find althe Apply methods. I also skipped CommandHandlers, but mighr need to introcue them to center the logic for any projections.
 
 The meat of the project is in [AggregateBase](./src/repository/AggregateBase.ts) where we Apply the events back via functions in the Aggregate.
 
