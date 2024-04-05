@@ -2,15 +2,14 @@
 // 1. to think in command / query separation - there are commands and there are queries
 // 2. strict CQRS recommends that commands do not return results apart from creation which returns an ID
 
-// Questions for me
-// 1. are commands at the app level?
-// 2. a clear boundary of domain events vs aggregate root events - Commands that come in are domain commands (CreateTeamCommand)
+// notes for me
+// 1. a clear boundary of domain events vs aggregate root events - Commands that come in are domain commands (CreateTeamCommand)
 //    right now we don't emit any events via an internal event bus to update the views like the Greg Young version does (but does not work well with Node)
 //    need a discovery into whether an in-mem event bus greg young approach is better (don't think so for node right now)
-// 3. we can emit Domain Events from the handlers (like DomainUpdatedV1) if we want to tell other systems of changes
+// 2. we can emit Domain Events from the handlers (like DomainUpdatedV1) if we want to tell other systems of changes
 //    either do this by transactional outbox pattern (preferred) or pure sqs publish (good but does not cover sqs failures)
 
-// Useful links
+// useful links
 // https://github.com/gregoryyoung/m-r/blob/master/SimpleCQRS/CommandHandlers.cs
 
 interface ICommandHandler<Command, ResultType> {
