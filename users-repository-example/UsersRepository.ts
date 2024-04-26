@@ -28,6 +28,7 @@ export class UsersRepository extends EventSourcingBase<User> implements IUsersRe
     };
   }
 }
+
 type ApplyUserCreatedV1 = {
   email: string;
   name: string;
