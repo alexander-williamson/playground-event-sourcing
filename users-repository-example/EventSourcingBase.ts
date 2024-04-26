@@ -11,7 +11,7 @@ export abstract class EventSourcingBase<T extends Entity> {
     return await this.ApplyEventRows(rows);
   }
 
-  protected async InsertEvent(aggregateId: string, eventType: string, eventJson: any, connection: IConnection) {
+  protected async InsertEvent(aggregateId: string, eventType: string, eventJson: any, connection: IConnection): Promise<void> {
     console.debug({ aggregateId, eventType, eventJson });
     await connection.Query({
       // mysql does not support variable table names
