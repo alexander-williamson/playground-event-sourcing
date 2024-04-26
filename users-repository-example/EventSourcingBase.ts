@@ -5,6 +5,9 @@ export abstract class EventSourcingBase<T extends Entity> {
 
   public async GetById(aggregateId: string): Promise<T | undefined> {
     const rows = await this.GetRows(aggregateId);
+    if(rows.length === 0) { 
+      return undefined;
+    }
     return await this.ApplyEventRows(rows);
   }
 
