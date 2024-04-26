@@ -21,6 +21,7 @@ export abstract class EventSourcingBase<T extends Entity> {
   }
 
   private async GetRows(aggregateId: string): Promise<EventSourcingRow[]> {
+    // some example rows
     const results: EventSourcingRow[] = [
       {
         aggregate_id: "example",
