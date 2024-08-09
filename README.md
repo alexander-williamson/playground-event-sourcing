@@ -2,7 +2,7 @@
 
 An example of a bare bones implementation of using a MySQL repository to deal with Event Sourcing aggregates.
 
-I struggled with rehdrating an object bybusing reflection to find althe Apply methods. I also skipped CommandHandlers, but mighr need to introcue them to center the logic for any projections.
+This uses an example of function name lookups so instead of having a function that handles an unknown type, we can type the functions and give them good names like `ApplyBasketItemAdded`.
 
 The meat of the project is in [AggregateBase](./src/repository/AggregateBase.ts) where we Apply the events back via functions in the Aggregate.
 
